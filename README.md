@@ -2,39 +2,39 @@ Mystery Hunt Bingo
 
 <table border="1">
     <tr>
-        <td id="00"></td>
-        <td id="01"></td>
-        <td id="02"></td>
-        <td id="03"></td>
-        <td id="04"></td>
+        <td width="150" height="150" id="00"></td>
+        <td width="150" height="150" id="01"></td>
+        <td width="150" height="150" id="02"></td>
+        <td width="150" height="150" id="03"></td>
+        <td width="150" height="150" id="04"></td>
     </tr>
     <tr>
-        <td id="10"></td>
-        <td id="11"></td>
-        <td id="12"></td>
-        <td id="13"></td>
-        <td id="14"></td>
+        <td width="150" height="150" id="10"></td>
+        <td width="150" height="150" id="11"></td>
+        <td width="150" height="150" id="12"></td>
+        <td width="150" height="150" id="13"></td>
+        <td width="150" height="150" id="14"></td>
     </tr>
     <tr>
-        <td id="20"></td>
-        <td id="21"></td>
-        <td id="22"></td>
-        <td id="23"></td>
-        <td id="24"></td>
+        <td width="150" height="150" id="20"></td>
+        <td width="150" height="150" id="21"></td>
+        <td width="150" height="150" id="22"></td>
+        <td width="150" height="150" id="23"></td>
+        <td width="150" height="150" id="24"></td>
     </tr>
     <tr>
-        <td id="30"></td>
-        <td id="31"></td>
-        <td id="32"></td>
-        <td id="33"></td>
-        <td id="34"></td>
+        <td width="150" height="150" id="30"></td>
+        <td width="150" height="150" id="31"></td>
+        <td width="150" height="150" id="32"></td>
+        <td width="150" height="150" id="33"></td>
+        <td width="150" height="150" id="34"></td>
     </tr>
     <tr>
-        <td id="40"></td>
-        <td id="41"></td>
-        <td id="42"></td>
-        <td id="43"></td>
-        <td id="44"></td>
+        <td width="150" height="150" id="40"></td>
+        <td width="150" height="150" id="41"></td>
+        <td width="150" height="150" id="42"></td>
+        <td width="150" height="150" id="43"></td>
+        <td width="150" height="150" id="44"></td>
     </tr>
 </table>
 
@@ -94,13 +94,17 @@ PHRASE_LIST = shuffle(PHRASE_LIST);
 var count = 0;
 for (i = 0; i < 5; i++) {
     for (j = 0; j < 5; j++) {
+        // Assign entries
         var id = i.toString() + j.toString();
+        var element = document.getElementById(id);
         if (i === 2 && j === 2) {
-            document.getElementById(id).innerHTML = "\"This is not a puzzle.\"";
-            document.getElementById(id).style.fontWeight = "bold";
+            element.innerHTML = "\"This is not a puzzle.\"";
+            element.style.fontWeight = "bold";
         } else {
-            document.getElementById(id).innerHTML = PHRASE_LIST[count++];
+            element.innerHTML = PHRASE_LIST[count++];
         }
+        // Misc styling
+        element.style.textAlign = "center";
     }
 }
 </script>
