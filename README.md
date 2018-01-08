@@ -117,7 +117,7 @@ for (i = 0; i < 5; i++) {
         var id = i.toString() + j.toString();
         var element = document.getElementById(id);
         if (i === 2 && j === 2) {
-            element.innerHTML = "\"This is not a puzzle.\"";
+            element.innerHTML = "FREE SQUARE: \"This is not a puzzle.\"";
             element.style.fontWeight = "bold";
         } else {
             element.innerHTML = PHRASE_LIST[count++];
