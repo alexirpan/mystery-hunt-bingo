@@ -75,7 +75,7 @@ var PHRASE_LIST = [
     "Puzzle using math at the graduate-student level or higher.",
     "Puzzle about a webcomic.",
     "Puzzle where teams must create a music video.",
-    "Puzzle about Taylor SWift.",
+    "Puzzle about Taylor Swift.",
     "Puzzle about Magic: the Gathering.",
     "Puzzle data is embedded in something produced several months ago.",
     "Puzzle uses blockchains in some way.",
