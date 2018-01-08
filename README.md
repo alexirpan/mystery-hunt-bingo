@@ -4,7 +4,7 @@ Inspired by [The Last Jedi Bingo](http://www.darthsanddroids.net/bingo/Episode8/
 
 This is not a puzzle. In fact, I have no relation to the organizing team whatsoever.
 
-<table border="1">
+<table border="1" cellpadding="0" cellspacing="0">
     <tr>
         <td width="125" height="125" id="00"></td>
         <td width="125" height="125" id="01"></td>
@@ -22,7 +22,7 @@ This is not a puzzle. In fact, I have no relation to the organizing team whatsoe
     <tr>
         <td width="125" height="125" id="20"></td>
         <td width="125" height="125" id="21"></td>
-        <td width="125" height="125" id="22"></td>
+        <td width="125" height="125" id="22">Waiting for Javascript to populate entries. Please wait...</td>
         <td width="125" height="125" id="23"></td>
         <td width="125" height="125" id="24"></td>
     </tr>
