@@ -61,10 +61,8 @@ var PHRASE_LIST = [
     "Puzzle which has the phrase HERRING or RED HERRING",
     "Puzzle is unsolved by the end of Hunt.",
     "Team uses a metameta to backsolve a metapuzzle.",
-    "Puzzle relying on team room assignments.",
     "Puzzle relying on team names.",
     "Something given at the start of Hunt is a puzzle.",
-    "isithuntyet.info is part of the puzzle.",
     "Someone unaffliated with Mystery Hunt gets confused by Mystery Hunt.",
     "No errata is issued during Hunt.",
     "Puzzle is a Duck Konundrum.",
@@ -82,7 +80,17 @@ var PHRASE_LIST = [
     "Puzzle about bridge or poker.",
     "Puzzle uses ternary in extraction.",
     "Team needs to request a replacement for a physical puzzle.",
-    "Team backsolves the scavenger hunt puzzle."];
+    "Team backsolves the scavenger hunt puzzle.",
+    "Team solves a metapuzzle with fewer than half the answers.",
+    "A puzzle has multiple answers.",
+    "The winning team has < 100 members.",
+    "The winning team has 100+ members.",
+    "More than 20 incorrect guesses on a single puzzle.",
+    "Puzzle requires identifying over 25 audio clips.",
+    "A definitely-wrong idea turns out to be the right idea.",
+    "After 4+ hours of work, the puzzle gets backsolved.",
+    "After 30+ minutes, someone checks their work and solves the puzzle.",
+    "Entire puzzle is stuck because of an unsolved cryptic."];
 
 
 function shuffle(array) {
