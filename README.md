@@ -1,6 +1,6 @@
-Print out this page and take it with you to Mystery Hunt! Refresh the page to get a new Bingo board.
+Generate a bingo board prior to MIT Mystery Hunt! Refresh the page to get a new board.
 
-Inspired by [The Last Jedi Bingo](http://www.darthsanddroids.net/bingo/Episode8/) from Darths & Droids.
+Inspired by the [several](https://www.darthsanddroids.net/bingo/Episode7/) [Star Wars](https://www.darthsanddroids.net/bingo/Episode8/) [bingos](http://www.darthsanddroids.net/bingo/Episode9/) made by Darths & Droids for the sequel trilogy.
 
 This is not a puzzle, and I'm not part of the organizing team.
 
@@ -45,17 +45,17 @@ This is not a puzzle, and I'm not part of the organizing team.
 <script>
 var PHRASE_LIST = [
     "Puzzle release delayed due to technical difficulties.",
-    "Puzzle requires cooking something for HQ.",
+    // "Puzzle requires cooking something for HQ.",
     "Multiple teams do the final runaround simultaneously.",
     "First puzzle is solved in the first 10 minutes.",
     "First meta is solved in the first hour.",
     "Puzzle references previous Mystery Hunts.",
     "Puzzle uses an anime that started airing in the past 2 years.",
-    "Puzzle uses a TV show that stopped airing before 1980.",
+    "Puzzle uses a TV show that stopped airing before 1990.",
     "Puzzle involves playing a video game.",
     "Puzzle uses a video game released in the past 2 years.",
-    "Hunt is won before Sunday.",
-    "Hunt is won on Monday.",
+    "Hunt is won before Sunday (Eastern time zone).",
+    "Hunt is won on Monday (Eastern time zone).",
     "Puzzle whose crucial step is realizing it matches an MIT landmark.",
     "Puzzle which has the phrase HERRING or RED HERRING",
     "Something given at the start of Hunt is a puzzle.",
@@ -74,8 +74,8 @@ var PHRASE_LIST = [
     "Puzzle uses blockchains in some way.",
     "Puzzle about bridge or poker.",
     "Puzzle uses ternary in extraction.",
-    "Need to ask for a replacement for a physical puzzle.",
-    "The scavenger hunt puzzle is backsolved.",
+    // "Need to ask for a replacement for a physical puzzle.",
+    // "The scavenger hunt puzzle is backsolved.",
     "Metapuzzle solved with fewer than half the answers.",
     "A puzzle has multiple answers.",
     "The winning team has < 50 members.",
@@ -84,8 +84,25 @@ var PHRASE_LIST = [
     "Puzzle requires identifying over 25 audio clips.",
     "\"That can't be the right idea!\" It's the right idea.",
     "Puzzle is stuck for 4+ hours, then gets backsolved.",
-    "Puzzle is stuck for 30+ minutes, then someone checks work and solves it.",
-    "Puzzle is stuck because final step is to solve a cryptic and no one gets it."];
+    "Puzzle is stuck for 30+ minutes, then someone checks the work and solves it.",
+    "Puzzle is stuck because final step is to solve a cryptic and no one can.",
+    "Puzzle has a clue that references COVID-19 or the coronavirus.",
+    "10+ airplane emojis appear during kickoff.",
+    "Puzzle about Harry Potter.",
+    "Puzzle about Lord of the Rings.",
+    "Puzzle that uses solfege.",
+    "Puzzle that uses blood types.",
+    "A cryptics puzzle where the wordplay half must be modified first.",
+    "Puzzle referencing a Pixar movie.",
+    "Puzzle about building your own logic puzzle.",
+    "Answer to the puzzle appears in the title.",
+    "There's a copy-to-clipboard button.",
+    "Puzzle references the US 2020 election.",
+    "Rock Lobster by The B-52's gets referenced.",
+    "Video chat program for interactive events crashes.",
+    "Puzzle that requires physically running around.",
+    "Puzzle that requires GPS spoofing."
+];
 
 function shuffle(array) {
     var currentIndex = array.length
