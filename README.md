@@ -102,8 +102,7 @@ var PHRASE_LIST = [
     "Video chat program for interactive events crashes.",
     "Puzzle that requires physically running around.",
     "Puzzle that requires GPS spoofing.",
-    "Puzzle that references Pokemon.",
-    "Marble League 2020 was hosted by Team Galactic. This is important to a puzzle. PLEASE BE TRUE."
+    "Puzzle that references Pokemon."
 ];
 
 function shuffle(array) {
