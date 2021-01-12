@@ -71,12 +71,12 @@ var PHRASE_LIST = [
     "Puzzle about Taylor Swift.",
     "Puzzle about Magic: the Gathering.",
     "Puzzle data is embedded in something produced months ago.",
-    "Puzzle uses blockchains in some way.",
+    "Puzzle uses blockchains or cryptocurrency in some way.",
     "Puzzle about bridge or poker.",
     "Puzzle uses ternary in extraction.",
     // "Need to ask for a replacement for a physical puzzle.",
     // "The scavenger hunt puzzle is backsolved.",
-    "Metapuzzle solved with fewer than half the answers.",
+    "Metapuzzle solved with <= half the answers.",
     "A puzzle has multiple answers.",
     "The winning team has < 50 members.",
     "The winning team has 50+ members.",
@@ -101,7 +101,9 @@ var PHRASE_LIST = [
     "Rock Lobster by The B-52's gets referenced.",
     "Video chat program for interactive events crashes.",
     "Puzzle that requires physically running around.",
-    "Puzzle that requires GPS spoofing."
+    "Puzzle that requires GPS spoofing.",
+    "Puzzle that references Pokemon.",
+    "Marble League 2020 was hosted by Team Galactic. This is important to a puzzle. PLEASE BE TRUE."
 ];
 
 function shuffle(array) {
