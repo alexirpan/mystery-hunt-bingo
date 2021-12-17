@@ -101,15 +101,15 @@ var PHRASE_LIST = [
     "Puzzle that requires GPS spoofing.",
     "Puzzle that references Pokemon.",
     "Puzzle whose title is a palindrome at least 3 characters long.",
-    "PuZzle whose answer is a palindrome",
-    "At least 3 different palindromes appear in kickoff",
-    "Team emoji are used in a puzzle",
-    "Puzzle that reference My Little Pony",
-    "The hunt has 160+ puzzles",
-    "The hunt has < 160 puzzles",
-    "A logic puzzle with more than one solution",
-    "Non-meta puzzle answer is over 20 letters long",
-    "Puzzle that references Star Trek"
+    "PuZzle whose answer is a palindrome.",
+    "At least 3 different palindromes appear in kickoff.",
+    "Team emoji are used in a puzzle.",
+    "Puzzle that reference My Little Pony.",
+    "The hunt has 160+ puzzles.",
+    "The hunt has < 160 puzzles.",
+    "A logic puzzle with more than one solution.",
+    "Non-meta puzzle answer is over 20 letters long.",
+    "Puzzle that references Star Trek."
 ];
 
 function shuffle(array) {
