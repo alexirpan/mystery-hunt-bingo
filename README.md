@@ -2,8 +2,6 @@ Generate a bingo board prior to MIT Mystery Hunt! Refresh the page to get a new 
 
 Inspired by the [several](https://www.darthsanddroids.net/bingo/Episode7/) [Star Wars](https://www.darthsanddroids.net/bingo/Episode8/) [bingos](http://www.darthsanddroids.net/bingo/Episode9/) made by Darths & Droids for the sequel trilogy.
 
-This is not a puzzle, and I'm not part of the organizing team.
-
 <table border="1" cellpadding="0" cellspacing="0">
     <tr>
         <td width="125" height="125" id="00"></td>
@@ -60,7 +58,7 @@ var PHRASE_LIST = [
     "Puzzle which has the phrase HERRING or RED HERRING",
     "Something given at the start of Hunt is a puzzle.",
     "No errata is issued during Hunt.",
-    "Puzzle is a Duck Konundrum.",
+    "Puzzle is a Konundrum.",
     "Puzzle requires playing out a board game.",
     "A puzzle is part of at least two metapuzzles.",
     "Puzzle where anagramming is part of the intended solution.",
