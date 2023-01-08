@@ -40,73 +40,112 @@ Inspired by the [several](https://www.darthsanddroids.net/bingo/Episode7/) [Star
     </tr>
 </table>
 
+<div style="text-align:center">
+    <input id="seed" type="text">
+    <button id="generate">Generate</button>
+</div>
+
 <script>
 var PHRASE_LIST = [
-    "Puzzle release delayed due to technical difficulties.",
-    // "Puzzle requires cooking something for HQ.",
-    "Multiple teams are on the final runaround simultaneously.",
-    "First puzzle is solved in the first 10 minutes.",
-    "First meta is solved in the first 2 hours.",
-    "Puzzle references previous Mystery Hunts.",
-    "Puzzle uses an anime that started airing in the past 2 years.",
-    "Puzzle uses a TV show that stopped airing before 1990.",
-    "Puzzle involves playing a video game.",
-    "Puzzle uses a video game released in the past 2 years.",
-    "Hunt is won before Sunday (Eastern time zone).",
-    "Hunt is won on Monday (Eastern time zone).",
-    "Puzzle whose crucial step is realizing it matches an MIT landmark.",
-    "Puzzle which has the phrase HERRING or RED HERRING",
-    "Something given at the start of Hunt is a puzzle.",
-    "No errata is issued during Hunt.",
-    "Puzzle is a Konundrum.",
+    "Puzzle about Magic: the Gathering.",
     "Puzzle requires playing out a board game.",
+    "Answer to the puzzle appears in the title.",
+    "Puzzle uses ternary in extraction.",
+    "Puzzle release delayed due to technical difficulties.",
+    "Something given at the start of Hunt is a puzzle.",
+    "Puzzle that requires physically running around.",
     "A puzzle is part of at least two metapuzzles.",
-    "Puzzle where anagramming is part of the intended solution.",
+    "Puzzle about Taylor Swift.",
+    "Puzzle is stuck for 30+ minutes, then someone checks the work and solves it.",
+    "Puzzle is stuck for 4+ hours, then gets backsolved.",
+    "Puzzle references previous Mystery Hunts.",
+    "Puzzle uses a video game released in the past 2 years.",
+    "Puzzle has a clue that references COVID-19 or the coronavirus.",
+    "Hunt is won on Monday (Eastern time zone).",
+    "Puzzle about Harry Potter.",
+    "Puzzle is a Konundrum.",
+    "Puzzle uses a TV show that stopped airing before 1990.",
+    "Puzzle that uses blood types.",
+    "External tool used for hunt goes down.",
+    "First puzzle is solved in the first 10 minutes,",
     "Puzzle uses element symbols.",
     "Puzzle uses grad-level math or higher.",
-    "Puzzle about a webcomic.",
-    "Puzzle where teams must create a music video.",
-    "Puzzle about Taylor Swift.",
-    "Puzzle about Magic: the Gathering.",
+    "There's a copy-to-clipboard button.",
+    "A logic puzzle with more than one solution.",
     "Puzzle data is embedded in something publicly available months ago.",
     "Puzzle uses blockchains or cryptocurrency in some way.",
     "Puzzle about bridge or poker.",
-    "Puzzle uses ternary in extraction.",
-    // "Need to ask for a replacement for a physical puzzle.",
+    "Puzzle that references Star Trek.",
     "SCAVENGER HUNT!!!",
     "Metapuzzle solved with <= half the answers.",
-    "A puzzle has multiple answers.",
+    "Hunt is won before Sunday (Eastern time zone).",
     "The winning team has < 60 members.",
     "The winning team has 60+ members.",
     "More than 10 incorrect guesses on a single puzzle.",
-    "Puzzle requires identifying over 25 audio clips.",
-    "\"That can't be the right idea!\" It's the right idea.",
-    "Puzzle is stuck for 4+ hours, then gets backsolved.",
-    "Puzzle is stuck for 30+ minutes, then someone checks the work and solves it.",
-    "Puzzle is stuck because final step is to solve a cryptic and no one can.",
-    "Puzzle has a clue that references COVID-19 or the coronavirus.",
-    "Puzzle about Harry Potter.",
-    "Puzzle about Lord of the Rings.",
+    "Puzzle about a webcomic.",
+    "A puzzle is part of at least two metapuzzles.",
+    "Multiple teams are on the final runaround simultaneously.",
     "Puzzle that uses solfege.",
-    "Puzzle that uses blood types.",
-    "A cryptics puzzle where the wordplay half must be modified first.",
-    "Puzzle referencing a Pixar movie.",
-    "Answer to the puzzle appears in the title.",
-    "There's a copy-to-clipboard button.",
-    "Puzzle references the US 2020 election.",
-    "External tool used for hunt goes down.",
-    "Puzzle that requires physically running around.",
-    "Puzzle that requires GPS spoofing.",
+    "Puzzle involves playing a video game.",
+    "Puzzle where anagramming is part of the intended solution.",
+    "Puzzle uses an anime that started airing in the past 2 years.",
+    "Puzzle about Lord of the Rings.",
+    "Puzzle requires identifying over 25 audio clips.",
     "Puzzle that references Pokemon.",
+    "A puzzle has multiple answers.",
+    "Puzzle referencing a Pixar movie.",
+    "Puzzle whose crucial step is realizing it matches an MIT landmark.",
+    "First meta is solved in the first 2 hours.",
+    "A cryptics puzzle where the wordplay half must be modified first.",
+    "Puzzle references the US 2020 election.",
+    "Puzzle where teams must create a music video.",
+    "Puzzle that requires GPS spoofing.",
+    "Puzzle which has the phrase HERRING or RED HERRING",
     "Puzzle that references My Little Pony.",
     "The hunt has 160+ puzzles.",
     "The hunt has < 160 puzzles.",
-    "A logic puzzle with more than one solution.",
+    "Puzzle is stuck because final step is to solve a cryptic and no one can.",
     "Non-meta puzzle answer is over 20 letters long.",
-    "Puzzle that references Star Trek."
+    "No errata is issued during Hunt."
 ];
 
-function shuffle(array) {
+// From https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
+// Generate 53-bit hash
+// Should generate enough randomness / be impossible to rig even with source code.
+const cyrb53 = (str, seed = 0) => {
+  let h1 = 0xdeadbeef ^ seed,
+    h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0, ch; i < str.length; i++) {
+    ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
+
+// From https://github.com/bryc/code/blob/master/jshash/PRNGs.md#mulberry32
+// Seedable PRNG.
+function mulberry32(a) {
+    return function() {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+}
+
+
+function cleanSeed(seed) {
+    var cleaned = seed.replace(/[^0-9a-zA-Z]/g, '');
+    cleaned = cleaned.toUpperCase();
+    return cleaned;
+}
+
+function shuffle(array, prng) {
     var currentIndex = array.length
       , temporaryValue
       , randomIndex
@@ -116,7 +155,7 @@ function shuffle(array) {
     while (0 !== currentIndex) {
 
       // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
+      randomIndex = Math.floor(prng() * currentIndex);
       currentIndex -= 1;
 
       // And swap it with the current element.
@@ -128,24 +167,52 @@ function shuffle(array) {
     return array;
 }
 
-// Shuffle then take first 24 entries.
-PHRASE_LIST = shuffle(PHRASE_LIST);
+function randomSeed() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let lst = [];
+    for (var i = 0; i < 9; i++) {
+        lst[i] = chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return lst.join('');
+}
 
-var count = 0;
-for (i = 0; i < 5; i++) {
-    for (j = 0; j < 5; j++) {
-        // Assign entries
-        var id = i.toString() + j.toString();
-        var element = document.getElementById(id);
-        if (i === 2 && j === 2) {
-            element.innerHTML = "FREE SQUARE: \"This is not a puzzle.\"";
-            element.style.fontWeight = "bold";
-        } else {
-            element.innerHTML = PHRASE_LIST[count++];
+// Write a random seed value.
+// This is needed to make it work properly on refresh - the browser seems to cache
+// the input value which makes it pass the check in generate()
+var seedElem = document.getElementById('seed');
+seedElem.value = randomSeed();
+
+function generate() {
+    if (!seedElem.value) {
+        // Generate for them
+        seedElem.value = randomSeed();
+    }
+    var prng = mulberry32(cyrb53(cleanSeed(seedElem.value)));
+
+    // Shuffle then take first 24 entries.
+    var phraseList = [...PHRASE_LIST];
+    phraseList = shuffle(phraseList, prng);
+
+    var count = 0;
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            // Assign entries
+            var id = i.toString() + j.toString();
+            var element = document.getElementById(id);
+            if (i === 2 && j === 2) {
+                element.innerHTML = "FREE SQUARE: \"This is not a puzzle.\"";
+                element.style.fontWeight = "bold";
+            } else {
+                element.innerHTML = phraseList[count++];
+            }
+            // Misc styling
+            element.style.textAlign = "center";
+            element.style.verticalAlign = "middle";
         }
-        // Misc styling
-        element.style.textAlign = "center";
-        element.style.verticalAlign = "middle";
     }
 }
+
+// connect to button and generate intial page
+document.getElementById('generate').onclick = function() { generate(); }
+generate();
 </script>
