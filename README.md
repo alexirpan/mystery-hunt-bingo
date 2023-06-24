@@ -185,13 +185,45 @@ seedElem.value = randomSeed();
 function generate() {
     if (!seedElem.value) {
         // Generate for them
+        console.log(seedElem.value);
         seedElem.value = randomSeed();
     }
+    var cleaned = cleanSeed(seedElem.value);
     var prng = mulberry32(cyrb53(cleanSeed(seedElem.value)));
 
-    // Shuffle then take first 24 entries.
-    var phraseList = [...PHRASE_LIST];
-    phraseList = shuffle(phraseList, prng);
+    var phraseList;
+    if (cleaned === 'NOISREVHM') {
+        phraseList = [
+            "Puzzle where teams must create a music video.",
+            "Puzzle about Magic: the Gathering.",
+            "Puzzle about a webcomic.",
+            "Puzzle about Taylor Swift.",
+            "Puzzle is a Konundrum.",
+            "Puzzle whose crucial step is realizing it matches an MIT landmark.",
+            "Puzzle uses grad-level math or higher.",
+            "Something given at the start of Hunt is a puzzle.",
+            "No errata is issued during Hunt.",
+            "Puzzle where anagramming is part of the intended solution.",
+            "Puzzle references previous Mystery Hunts.",
+            "Puzzle requires playing out a board game.",
+            "Puzzle uses a video game released in the past 2 years.",
+            "Puzzle uses element symbols.",
+            "Multiple teams are on the final runaround simultaneously.",
+            "A puzzle is part of at least two metapuzzles.",
+            "Hunt is won on Monday (Eastern time zone).",
+            "First meta is solved in the first 2 hours.",
+            "Puzzle involves playing a video game.",
+            "Puzzle which has the phrase HERRING or RED HERRING",
+            "First puzzle is solved in the first 10 minutes.",
+            "Puzzle uses a TV show that stopped airing before 1990.",
+            "Puzzle uses an anime that started airing in the past 2 years.",
+            "Hunt is won before Sunday (Eastern time zone).",
+        ];
+    } else {
+        // Shuffle then take first 24 entries.
+        phraseList = [...PHRASE_LIST];
+        phraseList = shuffle(phraseList, prng);
+    }
 
     var count = 0;
     for (i = 0; i < 5; i++) {
