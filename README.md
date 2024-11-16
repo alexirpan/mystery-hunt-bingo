@@ -97,7 +97,6 @@ var PHRASE_LIST = [
     "Puzzle whose crucial step is realizing it matches an MIT landmark.",
     "First meta is solved in the first 2 hours.",
     "A cryptics puzzle where the wordplay half must be modified first.",
-    "Puzzle references the US 2020 election.",
     "Puzzle where teams must create a music video.",
     "Puzzle that requires GPS spoofing.",
     "Puzzle which has the phrase HERRING or RED HERRING",
@@ -106,7 +105,9 @@ var PHRASE_LIST = [
     "The hunt has < 160 puzzles.",
     "Puzzle is stuck because final step is to solve a cryptic and no one can.",
     "Non-meta puzzle answer is over 20 letters long.",
-    "No errata is issued during Hunt."
+    "No errata is issued during Hunt.",
+    "Tech issues at Hunt start :(",
+    "A crossword that's 5x5 or smaller"
 ];
 
 // From https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
