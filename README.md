@@ -51,7 +51,6 @@ var PHRASE_LIST = [
     "Puzzle requires playing out a board game.",
     "Answer to the puzzle appears in the title.",
     "Puzzle uses ternary in extraction.",
-    "Puzzle release delayed due to technical difficulties.",
     "Something given at the start of Hunt is a puzzle.",
     "Puzzle that requires physically running around.",
     "A puzzle is part of at least two metapuzzles.",
