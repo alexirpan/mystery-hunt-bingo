@@ -107,8 +107,6 @@ var PHRASE_LIST = [
     "A crossword that's 5x5 or smaller.",
     "Puzzle features a 5x5 grid.",
     "Puzzle includes Luigi (any Luigi).",
-    "The word \"death\" is on a puzzle page.",
-    "The word \"mayhem\" is on a puzzle page.",
     "A puzzle whose title is only emoji.",
     "For every letter of the alphabet, there's a puzzle starting with that letter.",
     "Puzzle references or uses a large language model.",
@@ -120,7 +118,8 @@ var PHRASE_LIST = [
     "A puzzle about football (either one).",
     "Logic puzzle in more than 2 dimensions.",
     "Puzzle involves song lyrics.",
-    "Puzzle uses a non-standard list of 26 things."
+    "Puzzle uses a non-standard list of 26 things.",
+    "A cardinal (bird or bishop) appears on the hunt site."
 ];
 
 // From https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
