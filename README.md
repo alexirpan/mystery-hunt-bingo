@@ -119,6 +119,7 @@ var PHRASE_LIST = [
     "Logic puzzle in more than 2 dimensions.",
     "Puzzle involves song lyrics.",
     "Puzzle uses a non-standard list of 26 things.",
+    "Puzzle about 6 7",
     "A cardinal (bird or bishop) appears on the hunt site."
 ];
 
